@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let phraseIndex = 0;
     let charIndex = 0;
 
-    const typeSpeed = 38;     // typing speed
-    const holdTime = 1100;    // pause at end of phrase
-    const betweenTime = 180;  // pause before next phrase
+    const typeSpeed = 38; // typing speed
+    const holdTime = 1100; // pause at end of phrase
+    const betweenTime = 180; // pause before next phrase
 
     const typeTick = () => {
       const current = phrases[phraseIndex];
@@ -161,17 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Default filter on load (keeps behavior consistent even if HTML changes)
-  // If you already have "All" marked active in HTML, this is harmless.
+  // Default filter on load
   applyProjectFilter("all");
 
-  /* PROJECT "SHOW DETAILS" TOGGLE (ADDED from new JS)
-     - Works with your friend's project layout:
-       button[data-project-toggle], .project-card, .project-details
-     - Adds/removes .is-open on the card
-     - Updates aria-expanded / aria-hidden
-     - Updates label text without breaking the chevron icon
-  */
+  /* PROJECT "SHOW DETAILS" TOGGLE */
   const projectsRoot = document.getElementById("projects") || document;
 
   function setToggleLabel(btn, isOpen) {
@@ -209,8 +202,38 @@ document.addEventListener("DOMContentLoaded", () => {
     details.setAttribute("aria-hidden", String(!isOpen));
     setToggleLabel(toggle, isOpen);
   });
+  /* PROJECTS: middle "Show more projects" reveal */
+const projectsMore = document.getElementById("projectsMore");
+const projectsMoreBtn = document.getElementById("projectsMoreBtn");
 
-  /* COLLAPSIBLES (EXPERIENCE) */
+if (projectsMore && projectsMoreBtn) {
+  // start locked preview
+  projectsMore.classList.add("is-locked");
+  projectsMore.setAttribute("aria-hidden", "true");
+  projectsMoreBtn.setAttribute("aria-expanded", "false");
+
+  projectsMoreBtn.addEventListener("click", () => {
+    const isOpen = projectsMore.classList.toggle("is-open");
+
+    if (isOpen) {
+      projectsMore.classList.remove("is-locked");
+      projectsMore.setAttribute("aria-hidden", "false");
+      projectsMoreBtn.setAttribute("aria-expanded", "true");
+      projectsMoreBtn.innerHTML = `Hide extra projects <i class="fa-solid fa-chevron-up"></i>`;
+    } else {
+      projectsMore.classList.add("is-locked");
+      projectsMore.setAttribute("aria-hidden", "true");
+      projectsMoreBtn.setAttribute("aria-expanded", "false");
+      projectsMoreBtn.innerHTML = `Show more projects <i class="fa-solid fa-chevron-down"></i>`;
+
+      // optional: scroll back to CTA so it feels clean
+      projectsMoreBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+}
+
+
+  /* COLLAPSIBLES (EXPERIENCE) - your old one kept as-is */
   document.querySelectorAll("[data-toggle-collapsible]").forEach((button) => {
     const container = button.closest(".collapsible");
     if (!container) return;
@@ -229,6 +252,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const isCollapsed = container.getAttribute("data-collapsed") !== "false";
       container.setAttribute("data-collapsed", isCollapsed ? "false" : "true");
       updateLabel();
+    });
+  });
+
+  /* EXPERIENCE: toggle bullets/results per experience card */
+  document.querySelectorAll("[data-exp-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".exp-card");
+      if (!card) return;
+
+      const details = card.querySelector(".exp-details");
+      if (!details) return;
+
+      const isOpen = card.classList.toggle("is-open");
+
+      btn.setAttribute("aria-expanded", String(isOpen));
+      details.setAttribute("aria-hidden", String(!isOpen));
+
+      const more = btn.getAttribute("data-more") || "Show details";
+      const less = btn.getAttribute("data-less") || "Hide details";
+      btn.innerHTML = `${isOpen ? less : more} <i class="fa-solid fa-chevron-down"></i>`;
     });
   });
 
