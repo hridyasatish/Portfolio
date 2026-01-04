@@ -1198,4 +1198,642 @@ body.light-mode .edu-logo{
 .collapsible-content{
   max-height:10.5rem; /* was 6.4rem */
 }
+/* =========================================================
+   EXPERIENCE (Upgraded layout + bigger logos)
+   Paste at END of style.css
+   ========================================================= */
+
+.timeline-content.exp-card{
+  padding-top: 1.15rem;
+}
+
+/* Header row: logo + company/role */
+.exp-head{
+  display:flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: .75rem;
+}
+
+/* BIGGER logo */
+.exp-logo{
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.35);
+  border: 1px solid rgba(148,163,184,.28);
+  padding: .5rem;
+  flex: 0 0 auto;
+}
+
+/* Company + role text */
+.exp-head-text{
+  min-width: 0;
+}
+
+.exp-company{
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.25;
+}
+
+.exp-role{
+  margin-top: .2rem;
+  color: var(--text-muted);
+  font-size: .98rem;
+  font-weight: 550;
+}
+
+/* Skills gained chips */
+.exp-skill-row{
+  margin-top: .6rem;
+  display:flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.exp-skill{
+  display:inline-flex;
+  padding: .30rem .75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.40);
+  background: rgba(15,23,42,.72);
+  color: #e5e7eb;
+  font-size: .86rem;
+  line-height: 1.2;
+}
+
+/* Abstract + bullets + result */
+.exp-abstract{
+  margin: .25rem 0 .85rem;
+  color: var(--text-muted);
+}
+
+.exp-bullets{
+  margin: 0 0 .9rem;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.exp-bullets li{
+  margin: .45rem 0;
+}
+
+.exp-result{
+  margin: 0;
+  padding-top: .85rem;
+  border-top: 1px solid rgba(148,163,184,.18);
+  color: var(--text-muted);
+}
+
+.exp-result-key{
+  color: #e5e7eb;
+  font-weight: 800;
+  margin-right: .35rem;
+}
+
+/* Mobile tweak: make logo slightly smaller */
+@media (max-width: 480px){
+  .exp-logo{
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    padding: .45rem;
+  }
+}
+/* =========================================================
+   EDUCATION (Two rows: school + coursework, with logos)
+   Paste at END of style.css
+   ========================================================= */
+
+.edu-row{
+  display:grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.85fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.6rem;
+}
+
+/* Left school card layout */
+.edu-card-left{
+  padding: 1.1rem 1.2rem;
+}
+
+.edu-head{
+  display:flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Bigger school logo */
+.edu-logo{
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.35);
+  border: 1px solid rgba(148,163,184,.28);
+  padding: .5rem;
+  flex: 0 0 auto;
+}
+
+.edu-head-text{
+  min-width: 0;
+}
+
+.edu-course-card h3{
+  margin: 0 0 .85rem;
+}
+
+/* Keep your existing .edu-course-columns styles,
+   but add a tiny spacing improvement */
+.edu-course-columns ul{
+  margin: .35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+/* Mobile: stack school above coursework */
+@media (max-width: 980px){
+  .edu-row{
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+/* =========================================================
+   EDUCATION (Logo + Left details, Coursework on right)
+   Paste at END of style.css
+   ========================================================= */
+
+.edu-stack{
+  display:flex;
+  flex-direction:column;
+  gap:1.6rem;
+}
+
+/* row layout */
+.edu-row{
+  display:grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+  gap:1.6rem;
+}
+
+/* left card */
+.edu-card-left{
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+  padding:1.1rem 1.2rem;
+  border-radius:var(--radius-lg);
+  background:rgba(15,23,42,.96);
+  border:1px solid rgba(148,163,184,.32);
+  box-shadow:var(--shadow-subtle);
+}
+
+/* logo sizing (bigger + visible) */
+.edu-logo{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  border-radius:.9rem;
+  background:rgba(2,6,23,.35);
+  border:1px solid rgba(148,163,184,.22);
+  padding:.45rem;
+}
+
+/* text hierarchy */
+.edu-school-name{
+  margin:0 0 .25rem;
+  font-size:1.05rem;
+  font-weight:750;
+  color:var(--text-main);
+}
+
+.edu-degree{
+  margin:0;
+  font-size:1.0rem;
+  font-weight:700;
+  color:var(--text-main);
+}
+
+.edu-major{
+  margin:.25rem 0 .6rem;
+  color:var(--text-muted);
+  font-size:.95rem;
+  line-height:1.5;
+}
+
+.edu-location{
+  margin:.35rem 0 0;
+  color:var(--text-muted);
+  font-size:.9rem;
+}
+
+/* keep your existing meta styling, but ensure spacing looks good */
+.edu-meta{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* right card */
+.edu-card-right{
+  padding:1.1rem 1.2rem;
+  border-radius:var(--radius-lg);
+  background:rgba(15,23,42,.96);
+  border:1px solid rgba(148,163,184,.32);
+  box-shadow:var(--shadow-subtle);
+}
+
+.edu-side-title{
+  margin:0 0 .6rem;
+  font-size:.95rem;
+  color:#e5e7eb;
+  letter-spacing:.02em;
+}
+
+.edu-course-list{
+  margin:0;
+  padding-left:1.15rem;
+  color:var(--text-muted);
+}
+
+.edu-course-list li{
+  margin:.35rem 0;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .edu-row{
+    grid-template-columns:1fr;
+  }
+  .edu-logo{
+    width:58px;
+    height:58px;
+  }
+}
+/* =========================
+   PATENT SECTION (Detailed + Collapsible)
+   ========================= */
+
+.patent-card{ padding: 1.55rem 1.55rem; }
+
+.patent-head{
+  display:grid;
+  grid-template-columns: 70px minmax(0,1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.patent-org-logo{
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: .9rem;
+  background: rgba(15,23,42,.75);
+  border: 1px solid rgba(148,163,184,.28);
+  padding: .35rem;
+}
+
+.patent-title{ margin: 0 0 .35rem; font-size: 1.15rem; }
+
+.patent-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  align-items:center;
+  margin-bottom:.55rem;
+}
+
+.patent-dates{
+  color: var(--text-muted);
+  font-size: .88rem;
+}
+
+.patent-subline{
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.patent-preview{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: .6rem;
+}
+
+.patent-label{
+  display:block;
+  font-size:.74rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color: var(--text-muted);
+  margin-bottom: .45rem;
+}
+
+.patent-one-liner{
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.patent-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem;
+}
+
+.patent-chips-tight{ margin-top: .2rem; }
+
+.patent-details-grid{
+  display:grid;
+  grid-template-columns: minmax(0,1.55fr) minmax(0,1fr);
+  gap: 1.35rem;
+  padding-top: .8rem;
+}
+
+.patent-h{
+  margin: 0 0 .4rem;
+  font-size: .98rem;
+}
+
+.patent-p{
+  margin: 0 0 .95rem;
+  color: var(--text-muted);
+}
+
+.patent-images{
+  border: 1px solid rgba(148,163,184,.22);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  background: rgba(15,23,42,.72);
+}
+
+.patent-gallery{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: .9rem;
+}
+
+.patent-thumb{
+  display:block;
+  text-decoration:none;
+  border-radius: 1rem;
+  overflow:hidden;
+  border: 1px solid rgba(148,163,184,.25);
+  background: rgba(2,6,23,.45);
+}
+
+.patent-thumb img{
+  width:100%;
+  height: 240px;          /* key: makes A4 look like a clean thumbnail */
+  object-fit: contain;    /* key: shows full A4 without cropping */
+  background: rgba(2,6,23,.65);
+  display:block;
+}
+
+.patent-thumb-cap{
+  display:block;
+  padding: .55rem .75rem;
+  color: #e5e7eb;
+  font-size: .9rem;
+  border-top: 1px solid rgba(148,163,184,.22);
+}
+
+.patent-note{
+  margin: .75rem 0 0;
+  font-size: .85rem;
+  color: var(--text-muted);
+}
+
+/* Make it responsive */
+@media (max-width: 980px){
+  .patent-preview{ grid-template-columns: 1fr; }
+  .patent-details-grid{ grid-template-columns: 1fr; }
+  .patent-thumb img{ height: 220px; }
+}
+/* Stop right column stretching (removes empty space) */
+.patent-details-grid{
+  align-items: start; /* key fix: no stretch */
+}
+
+/* Stack images + skills cleanly on the right */
+.patent-side{
+  display:flex;
+  flex-direction:column;
+  gap: .9rem;
+  align-self: start;
+}
+
+/* Make the images box more compact */
+.patent-images{
+  padding: .85rem;      /* was 1rem */
+}
+
+/* Make the thumbnails a bit smaller to reduce vertical clutter */
+.patent-thumb img{
+  height: 190px;        /* was 240px */
+}
+
+/* Optional: show both thumbs in 2 columns on desktop (reduces height a lot) */
+@media (min-width: 980px){
+  .patent-gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Skills card on the right (matches style) */
+.patent-skills{
+  border: 1px solid rgba(148,163,184,.22);
+  border-radius: var(--radius-lg);
+  padding: .85rem;
+  background: rgba(15,23,42,.72);
+}
+/* =========================
+   Block collapsible (for whole sections)
+   ========================= */
+.block-collapsible{
+  margin-top: 1.25rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.75rem;
+}
+
+.block-collapsible .collapsible-content{
+  max-height: 0;        /* fully hidden */
+  overflow: hidden;
+  transition: max-height .25s ease-out;
+  width: 100%;
+}
+
+/* expanded */
+.block-collapsible[data-collapsed="false"] .collapsible-content{
+  max-height: 9999px;
+}
+
+/* remove fade overlay for block collapsible */
+.block-collapsible[data-collapsed="true"] .collapsible-content::after{
+  display: none;
+}
+/* EXPERIENCE: per-card "Show details" collapse */
+.exp-toggle{
+  margin-top: 10px;
+}
+
+.exp-details{
+  margin-top: 12px;
+}
+
+/* hide details by default (JS toggles .is-open) */
+.exp-card .exp-details{
+  display: none;
+}
+.exp-card.is-open .exp-details{
+  display: block;
+}
+
+/* rotate chevron when open */
+.exp-card.is-open .exp-toggle i{
+  transform: rotate(180deg);
+}
+
+/* keep animation smooth if you already have transitions */
+.exp-toggle i{
+  transition: transform .2s ease;
+}
+
+/* optional: tighten spacing so abstract + button looks clean */
+.exp-abstract{
+  margin-bottom: 8px;
+}
+
+/* EXPERIENCE: per-card show/hide details */
+.exp-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.exp-details {
+  display: none;
+  margin-top: 12px;
+}
+
+.exp-card.is-open .exp-details {
+  display: block;
+}
+
+/* Optional: rotate chevron when open (nice polish) */
+.exp-toggle i {
+  transition: transform 0.2s ease;
+}
+
+.exp-card.is-open .exp-toggle i {
+  transform: rotate(180deg);
+}
+/* PROJECTS: middle "show more" block */
+.projects-mid-cta {
+  grid-column: 1 / -1;
+  margin: 8px 0 4px;
+}
+
+.projects-mid-cta__inner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+}
+
+.projects-mid-cta__title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.projects-mid-cta__desc {
+  margin: 4px 0 0;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+.projects-mid-cta__btn {
+  white-space: nowrap;
+}
+
+/* PROJECTS: locked blurred preview */
+.projects-more {
+  grid-column: 1 / -1;
+  position: relative;
+  display: grid;
+  grid-template-columns: inherit;
+  gap: inherit;
+}
+
+.projects-more.is-locked {
+  max-height: 360px;          /* show a preview so people notice */
+  overflow: hidden;
+}
+
+/* .projects-more.is-locked::after {
+  content: "Locked preview";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 14px 14px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: rgba(255,255,255,0.85);
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.65));
+  pointer-events: none;
+} */
+
+.projects-more.is-locked .project-card {
+  filter: blur(7px);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+  transform: translateZ(0);
+}
+
+.projects-more.is-open {
+  max-height: none;
+}
+
+.projects-more.is-open .project-card {
+  filter: none;
+  opacity: 1;
+  pointer-events: auto;
+  user-select: auto;
+}
+
+.projects-mid-cta__btn i {
+  transition: transform 0.2s ease;
+}
+
+.projects-more.is-open ~ .projects-mid-cta .projects-mid-cta__btn i {
+  transform: rotate(180deg);
+}
+/* PATENT: visible bullet lists (do NOT reuse exp-details here) */
+.patent-list {
+  margin: 0.6rem 0 1rem;
+  padding-left: 1.15rem;
+  display: block;
+}
+
+.patent-list li {
+  margin: 0.4rem 0;
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+
 
