@@ -31,8 +31,8 @@
         <a href="#home">Home</a>
         <a href="#about">Background</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#patent">Patent</a>
         <a href="#contact">Contact</a>
@@ -41,9 +41,9 @@
       <div class="header-actions">
         <button class="btn btn-outline" data-resume-trigger="resume">View Resume</button>
 
-        <button id="themeToggle" aria-label="Toggle theme" class="icon-btn">
+        <!-- <button id="themeToggle" aria-label="Toggle theme" class="icon-btn">
           <i class="fa-solid fa-moon"></i>
-        </button>
+        </button> -->
 
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
@@ -77,8 +77,9 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
+          
           <a href="#experience" class="btn btn-ghost">View Experience</a>
+          <a href="#projects" class="btn btn-primary">View Projects</a>
         </div>
 
         <div class="hero-social">
@@ -285,8 +286,352 @@
       </div>
     </div>
   </section>
+  <!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header" data-animate="up">
+      <h2>Professional Background</h2>
+      <p>Experience across embedded platforms, robotics subsystems, and edge systems.</p>
+    </div>
 
-  <!-- PROJECTS (clean tab cards + hidden details until clicked) -->
+    <div class="timeline">
+
+      <!-- Synaptics -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Mar 2025 – Present</div>
+
+        <div class="timeline-content exp-card">
+          <div class="exp-head">
+            <img class="exp-logo" src="images/logos/synaptics.png" alt="Synaptics logo" loading="lazy" />
+            <div class="exp-head-text">
+              <h3 class="exp-company">Synaptics Incorporated</h3>
+              <div class="exp-role">Embedded Systems &amp; IoT Apprentice</div>
+
+              <div class="exp-skill-row" aria-label="Skills gained">
+                <span class="exp-skill">Yocto Linux</span>
+                <span class="exp-skill">GPIO bring-up</span>
+                <span class="exp-skill">Sensor integration</span>
+                <span class="exp-skill">Edge AI (SyNAP)</span>
+                <span class="exp-skill">Threading</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="exp-abstract">
+            Built and validated a wearable navigation assistant on the Synaptics Astra platform by bringing up low-level
+            GPIO/sensor interfaces on Yocto Linux, integrating real-time feedback loops, and debugging timing + reliability
+            issues using structured logs and repeatable field tests.
+          </p>
+
+          <!-- TOGGLE BUTTON (always visible) -->
+          <div class="exp-actions">
+            <button
+              class="btn btn-project-toggle exp-toggle"
+              type="button"
+              data-exp-toggle
+              data-more="Show details"
+              data-less="Hide details"
+              aria-expanded="false"
+            >
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <!-- DETAILS (hidden until toggle) -->
+          <div class="exp-details" aria-hidden="true">
+            <ul class="exp-bullets">
+              <li>Performed board bring-up: GPIO offset mapping, pin validation, and stable sensor readouts under Yocto Linux.</li>
+              <li>Integrated ultrasonic sensing pipeline and tuned trigger/echo timing to reduce false positives and missed detections.</li>
+              <li>Implemented IMU-based fall detection with data logging + threshold tuning to improve robustness across user motion profiles.</li>
+              <li>Supported edge-AI workflow by converting and testing models through SyNAP offline optimization and runtime validation.</li>
+              <li>Ran repeatable indoor/outdoor test walks and used logs to isolate intermittent timing/latency issues.</li>
+            </ul>
+
+            <p class="exp-result">
+              <span class="exp-result-key">Result:</span>
+              Delivered a stable end-to-end sensing + feedback pipeline with a reproducible bring-up/debug workflow that improved iteration speed and system reliability.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Canvas -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Jun 2025 – Sep 2025</div>
+
+        <div class="timeline-content exp-card">
+          <div class="exp-head">
+            <img class="exp-logo" src="images/logos/canvasbuild.png" alt="Canvas Construction logo" loading="lazy" />
+            <div class="exp-head-text">
+              <h3 class="exp-company">Canvas Construction Inc</h3>
+              <div class="exp-role">Electrical Engineering Intern</div>
+
+              <div class="exp-skill-row" aria-label="Skills gained">
+                <span class="exp-skill">KiCad</span>
+                <span class="exp-skill">PCB bring-up</span>
+                <span class="exp-skill">CAN (TWAI)</span>
+                <span class="exp-skill">Power design</span>
+                <span class="exp-skill">Validation</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="exp-abstract">
+            Owned the prototyping cycle for an industrial ESP32 CAN node: schematic + PCB layout, assembly, bring-up,
+            and communication diagnostics. Focused on power integrity, noisy I/O interfacing, and measurement-driven validation.
+          </p>
+
+          <div class="exp-actions">
+            <button
+              class="btn btn-project-toggle exp-toggle"
+              type="button"
+              data-exp-toggle
+              data-more="Show details"
+              data-less="Hide details"
+              aria-expanded="false"
+            >
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="exp-details" aria-hidden="true">
+            <ul class="exp-bullets">
+              <li>Designed and validated a 24V→3.3V supply stage with correct passives/decoupling for stable embedded operation.</li>
+              <li>Built robust I/O conditioning for higher-voltage signals and verified behavior under realistic load/noise conditions.</li>
+              <li>Performed CAN diagnostics using PCAN tools; verified bitrate, termination, and repeatable frame RX/TX.</li>
+              <li>Used LTspice + oscilloscope measurements to debug power/signal issues and guide PCB iterations.</li>
+              <li>Iterated ERC/DRC + layout fixes to prevent bring-up blockers and improve manufacturability.</li>
+            </ul>
+
+            <p class="exp-result">
+              <span class="exp-result-key">Result:</span>
+              Produced a bring-up-validated CAN node prototype with stable power and repeatable bus communication, ready for expansion to additional I/O and CANopen mapping.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- GradeUp -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Dec 2022 – Apr 2023</div>
+
+        <div class="timeline-content exp-card">
+          <div class="exp-head">
+            <img class="exp-logo" src="images/logos/gradeup.png" alt="GradeUp logo" loading="lazy" />
+            <div class="exp-head-text">
+              <h3 class="exp-company">GradeUp</h3>
+              <div class="exp-role">Embedded Systems Developer</div>
+
+              <div class="exp-skill-row" aria-label="Skills gained">
+                <span class="exp-skill">ESP8266</span>
+                <span class="exp-skill">Embedded C</span>
+                <span class="exp-skill">Interrupts</span>
+                <span class="exp-skill">Wi-Fi</span>
+                <span class="exp-skill">Web UI</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="exp-abstract">
+            Developed ESP8266 firmware for a home automation use-case, focusing on responsive interrupt-driven behavior,
+            sensor-driven logic, and a lightweight web interface for monitoring and control.
+          </p>
+
+          <div class="exp-actions">
+            <button
+              class="btn btn-project-toggle exp-toggle"
+              type="button"
+              data-exp-toggle
+              data-more="Show details"
+              data-less="Hide details"
+              aria-expanded="false"
+            >
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="exp-details" aria-hidden="true">
+            <ul class="exp-bullets">
+              <li>Implemented interrupt-driven GPIO handling to improve response time and avoid polling delays.</li>
+              <li>Integrated PIR-based motion logic for automated lighting control and reliable state transitions.</li>
+              <li>Built a simple web UI to monitor device status and trigger actions remotely over Wi-Fi.</li>
+              <li>Added structured logging and repeatable test runs to validate timing and functional correctness.</li>
+            </ul>
+
+            <p class="exp-result">
+              <span class="exp-result-key">Result:</span>
+              Improved responsiveness and stability of the firmware through interrupt-based design and repeatable validation workflows.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- SmartKnower -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">May 2021 – Jul 2021</div>
+
+        <div class="timeline-content exp-card">
+          <div class="exp-head">
+            <img class="exp-logo" src="images/logos/smartknower.png" alt="SmartKnower logo" loading="lazy" />
+            <div class="exp-head-text">
+              <h3 class="exp-company">SmartKnower</h3>
+              <div class="exp-role">IoT Intern</div>
+
+              <div class="exp-skill-row" aria-label="Skills gained">
+                <span class="exp-skill">IoT</span>
+                <span class="exp-skill">Sensors</span>
+                <span class="exp-skill">Microcontrollers</span>
+                <span class="exp-skill">Networking</span>
+                <span class="exp-skill">Debugging</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="exp-abstract">
+            Worked on IoT prototypes integrating sensors and microcontroller firmware, focusing on end-to-end connectivity,
+            data handling, and validating behavior under different operating conditions.
+          </p>
+
+          <div class="exp-actions">
+            <button
+              class="btn btn-project-toggle exp-toggle"
+              type="button"
+              data-exp-toggle
+              data-more="Show details"
+              data-less="Hide details"
+              aria-expanded="false"
+            >
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="exp-details" aria-hidden="true">
+            <ul class="exp-bullets">
+              <li>Integrated sensor peripherals and validated readings using calibrated test cases.</li>
+              <li>Built basic data collection + transmission workflows and verified reliability through repeat runs.</li>
+              <li>Documented setup, wiring, and debug steps to make builds reproducible for others.</li>
+            </ul>
+
+            <p class="exp-result">
+              <span class="exp-result-key">Result:</span>
+              Strengthened hands-on skills in sensor integration, firmware debugging, and IoT data flow validation.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Beeclust -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Aug 2020 – Apr 2021</div>
+
+        <div class="timeline-content exp-card">
+          <div class="exp-head">
+            <img class="exp-logo" src="images/logos/beeclust.png" alt="Beeclust logo" loading="lazy" />
+            <div class="exp-head-text">
+              <h3 class="exp-company">Beeclust Multi-Robot Systems Lab</h3>
+              <div class="exp-role">Junior Embedded Engineer</div>
+
+              <div class="exp-skill-row" aria-label="Skills gained">
+                <span class="exp-skill">Arduino</span>
+                <span class="exp-skill">Motor control</span>
+                <span class="exp-skill">PID tuning</span>
+                <span class="exp-skill">PCB design</span>
+                <span class="exp-skill">Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="exp-abstract">
+            Built and validated a line-following robot platform with real-time control, sensor calibration,
+            and iterative testing. Worked across firmware + hardware integration to improve stability and performance.
+          </p>
+
+          <div class="exp-actions">
+            <button
+              class="btn btn-project-toggle exp-toggle"
+              type="button"
+              data-exp-toggle
+              data-more="Show details"
+              data-less="Hide details"
+              aria-expanded="false"
+            >
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="exp-details" aria-hidden="true">
+            <ul class="exp-bullets">
+              <li>Implemented PID steering with 5-sensor IR array and tuned constants through repeated track trials.</li>
+              <li>Debugged motor saturation/oscillation issues by mapping error to differential PWM and refining control logic.</li>
+              <li>Supported hardware integration and PCB iterations for cleaner sensor signals and stable motor routing.</li>
+            </ul>
+
+            <p class="exp-result">
+              <span class="exp-result-key">Result:</span>
+              Achieved ~98% line tracking accuracy and improved stability under lighting/track variations through iterative tuning + validation.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Aaruush (combined) -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Jul 2020 – Dec 2021</div>
+
+        <div class="timeline-content exp-card">
+          <div class="exp-head">
+            <img class="exp-logo" src="images/logos/aaruush.png" alt="Aaruush logo" loading="lazy" />
+            <div class="exp-head-text">
+              <h3 class="exp-company">Aaruush, SRM University</h3>
+              <div class="exp-role">Committee Head (Electronics) • Student Technical Leadership</div>
+
+              <div class="exp-skill-row" aria-label="Skills gained">
+                <span class="exp-skill">Team leadership</span>
+                <span class="exp-skill">Event execution</span>
+                <span class="exp-skill">Stakeholder coordination</span>
+                <span class="exp-skill">Technical planning</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="exp-abstract">
+            Led the Electronics domain for Aaruush by planning and executing technical events, coordinating teams,
+            and ensuring end-to-end readiness of demos, rules, and on-ground operations for participant-facing events.
+          </p>
+
+          <div class="exp-actions">
+            <button
+              class="btn btn-project-toggle exp-toggle"
+              type="button"
+              data-exp-toggle
+              data-more="Show details"
+              data-less="Hide details"
+              aria-expanded="false"
+            >
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="exp-details" aria-hidden="true">
+            <ul class="exp-bullets">
+              <li>Owned event planning timelines and coordinated execution across multiple teams and dependencies.</li>
+              <li>Defined technical rules, judging criteria, and troubleshooting flow for smooth on-ground operations.</li>
+              <li>Managed volunteers, handled last-minute issues, and ensured events ran reliably under real constraints.</li>
+            </ul>
+
+            <p class="exp-result">
+              <span class="exp-result-key">Result:</span>
+              Delivered successful event execution with consistent participant experience through structured planning and fast on-site decision making.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (clean tab cards + hidden details until clicked) -->
 <section id="projects" class="section section-alt">
   <div class="container">
     <div class="section-header" data-animate="up">
@@ -303,659 +648,568 @@
     </div>
 
     <div class="projects-grid">
-<!-- 1) ESP32 CAN Node -->
-<article class="project-card project-card--tab" data-category="embedded iot hardware" data-animate="up">
-  <header class="project-head">
-    <h3 class="project-title">ESP32 CAN Node (24V I/O)</h3>
-    <div class="project-badges" aria-label="Project tags">
-      <span class="project-badge">Embedded Hardware</span>
-      <span class="project-badge">Industrial I/O</span>
-      <span class="project-badge">CAN Networking</span>
-      <span class="project-badge">PCB Design</span>
-      <span class="project-badge">Bring-up & Validation</span>
-    </div>
-  </header>
 
-  <a class="project-media" href="images/Board_Features.png" target="_blank" rel="noopener">
-    <img src="images/Board_Features.png" alt="ESP32 CAN node board features" loading="lazy" />
-  </a>
+      <!-- ===================== -->
+      <!-- VISIBLE (Top 2) -->
+      <!-- ===================== -->
 
-  <div class="project-tech" aria-label="Key technologies">
-    <span class="tech-chip"><i class="fa-solid fa-microchip"></i> ESP32-C6</span>
-    <span class="tech-chip"><i class="fa-solid fa-network-wired"></i> TWAI (CAN)</span>
-    <span class="tech-chip"><i class="fa-solid fa-bolt"></i> 24V→3.3V</span>
-    <span class="tech-chip"><i class="fa-solid fa-screwdriver-wrench"></i> PCAN Debug</span>
-  </div>
-
-  <p class="project-summary">
-    Industrial CAN node prototype that bridges 24V machine I/O to 3.3V embedded logic with robust power conditioning, protected digital/analog front-ends, and bring-up-validated CAN communication for distributed control.
-  </p>
-
-  <div class="project-actions">
-    <div class="project-buttons">
-      <a class="btn btn-project-primary" href="https://github.com/hridyasatish/ESP32_CAN_Node" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-
-    <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
-      Show details <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="project-details" aria-hidden="true">
-    <ul class="details-list">
-      <li><span class="dkey">Problem / Task:</span> Build a rugged CAN node for an industrial robot that safely interfaces noisy 24V I/O (digital + analog) with 3.3V embedded electronics and supports reliable bus communication with a path to CANopen.</li>
-      <li><span class="dkey">Solution:</span> Designed the schematic + PCB in KiCad around ESP32-C6 (TWAI) with a TJA1051T/3.3 CAN transceiver, implemented a 24V→3.3V buck supply with correct passives and decoupling, and added I/O conditioning using MOSFET-based level shifting for 24V digital inputs plus voltage-divider + op-amp buffering with low-pass filtering for analog sensing.</li>
-      <li><span class="dkey">Validation:</span> Verified bitrate, wiring, termination, and bidirectional CAN traffic using PCAN-USB/PCAN-View; validated filter cutoff/phase and transient response in LTspice using .ac/.tran and Bode plots; iterated ERC/DRC fixes (power flags, net labeling, grounding) to ensure stable bring-up.</li>
-      <li><span class="dkey">Result:</span> Achieved stable 3.3V regulation from a 24V rail, protected 24V-to-logic interfacing, and repeatable CAN bring-up with clean frame RX/TX—delivering a reusable hardware platform ready for expansion to more I/O channels and CANopen application-layer mapping.</li>
-    </ul>
-  </div>
-</article>
-
-
-<!-- 2) Wearable Navigation Assistant (Synaptics Astra) -->
-<article class="project-card project-card--tab" data-category="embedded realtime iot" data-animate="up">
-  <header class="project-head">
-    <h3 class="project-title">Synaptics Astra AI Navigation Assistant</h3>
-    <div class="project-badges" aria-label="Project tags">
-      <span class="project-badge">Embedded Linux</span>
-      <span class="project-badge">Edge AI</span>
-      <span class="project-badge">Sensor Systems</span>
-      <span class="project-badge">Real-time Feedback</span>
-      <span class="project-badge">Bring-up & Debug</span>
-    </div>
-  </header>
-
-  <a class="project-media" href="images/wearable.png" target="_blank" rel="noopener">
-    <img src="images/wearable.png" alt="Wearable navigation assistant prototype" loading="lazy" />
-  </a>
-
-  <div class="project-tech" aria-label="Key technologies">
-    <span class="tech-chip"><i class="fa-brands fa-linux"></i> Yocto</span>
-    <span class="tech-chip"><i class="fa-solid fa-microchip"></i> SL1680 NPU</span>
-    <span class="tech-chip"><i class="fa-solid fa-bolt"></i> GPIO</span>
-    <span class="tech-chip"><i class="fa-solid fa-code-branch"></i> Threads</span>
-  </div>
-
-  <p class="project-summary">
-    Edge-AI wearable navigation assistant on Astra SL1680, integrating multi-sensor inputs with low-latency feedback loops and embedded Linux bring-up/debug workflows.
-  </p>
-
-  <div class="project-actions">
-    <div class="project-buttons">
-      <a class="btn btn-project-primary" href="https://github.com/prateeksha9/wearable-navigation" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-
-    <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
-      Show details <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="project-details" aria-hidden="true">
-    <ul class="details-list">
-      <li><span class="dkey">Problem / Task:</span> Build an Edge-AI wearable navigation assistant for visually impaired users that combines semantic scene understanding with reliable obstacle and fall detection on an embedded Linux platform.</li>
-      <li><span class="dkey">Solution:</span> Performed board bring-up on Yocto Linux (GPIO offset mapping + sysfs control), integrated ultrasonic sensing, IMU-based fall detection, and implemented thread-safe real-time loops for feedback delivery.</li>
-      <li><span class="dkey">Validation:</span> Verified GPIO timing and sensor behavior with structured logs, tuned thresholds/filters to reduce false triggers, and ran repeatable indoor/outdoor test paths to validate stability over longer runtimes.</li>
-      <li><span class="dkey">Result:</span> Achieved a stable runtime pipeline that supports low-latency guidance through haptics/audio and a reproducible bring-up/debug workflow that accelerated iteration and field testing.</li>
-    </ul>
-  </div>
-</article>
-
-
-
-     <!-- 3) Canny Edge Detector on PREEMPT_RT (Raspberry Pi) -->
-<article class="project-card project-card--tab" data-category="embedded realtime" data-animate="up">
-  <header class="project-head">
-    <h3 class="project-title">Canny Edge Detection on PREEMPT_RT (Raspberry Pi)</h3>
-    <div class="project-badges" aria-label="Project tags">
-      <span class="project-badge">Real-Time Linux</span>
-      <span class="project-badge">Multithreading</span>
-      <span class="project-badge">Performance</span>
-      <span class="project-badge">Image Processing</span>
-      <span class="project-badge">Validation</span>
-    </div>
-  </header>
-
-  <a class="project-media" href="images/canny.png" target="_blank" rel="noopener">
-    <img src="images/canny.png" alt="Canny edge detection output and pipeline" loading="lazy" />
-  </a>
-
-  <div class="project-tech" aria-label="Key technologies">
-    <span class="tech-chip"><i class="fa-brands fa-linux"></i> PREEMPT_RT</span>
-    <span class="tech-chip"><i class="fa-solid fa-diagram-project"></i> Pthreads</span>
-    <span class="tech-chip"><i class="fa-solid fa-clock"></i> SCHED_FIFO</span>
-    <span class="tech-chip"><i class="fa-solid fa-microchip"></i> CPU Affinity</span>
-  </div>
-
-  <p class="project-summary">
-    Real-time optimization of an image-processing pipeline using Pthreads, CPU affinity, and RT scheduling to reduce jitter and improve throughput.
-  </p>
-
-  <div class="project-actions">
-    <div class="project-buttons">
-      <a class="btn btn-project-primary" href="https://github.com/hridyasatish/Canny-Edge-Detector-" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-
-    <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
-      Show details <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="project-details" aria-hidden="true">
-    <ul class="details-list">
-      <li><span class="dkey">Problem / Task:</span> Improve determinism and throughput of a compute-heavy Canny edge pipeline on a Raspberry Pi under CPU contention, while minimizing jitter for real-time behavior.</li>
-      <li><span class="dkey">Solution:</span> Patched/used PREEMPT_RT and migrated parallelism from OpenMP to Pthreads; pinned threads with CPU affinity and applied RT scheduling (SCHED_FIFO) to prioritize critical stages.</li>
-      <li><span class="dkey">Validation:</span> Instrumented per-stage timing, measured jitter under background load, and iterated thread placement/scheduling parameters to reduce latency spikes and context-switch overhead.</li>
-      <li><span class="dkey">Result:</span> Achieved a more deterministic runtime profile with lower jitter and more consistent frame processing—plus a repeatable methodology for RT tuning on embedded Linux.</li>
-    </ul>
-  </div>
-</article>
-
-<!-- 4) Line Following Robot (PCB + Control) -->
-<article class="project-card project-card--tab" data-category="embedded hardware" data-animate="up">
-  <header class="project-head">
-    <h3 class="project-title">Line Following Robot (PID + Custom PCB)</h3>
-    <div class="project-badges" aria-label="Project tags">
-      <span class="project-badge">Controls</span>
-      <span class="project-badge">Embedded</span>
-      <span class="project-badge">PCB Design</span>
-      <span class="project-badge">Sensors</span>
-      <span class="project-badge">Testing</span>
-    </div>
-  </header>
-
-  <a class="project-media" href="images/line_follower.png" target="_blank" rel="noopener">
-    <img src="images/line_follower.png" alt="Line following robot and PCB" loading="lazy" />
-  </a>
-
-  <div class="project-tech" aria-label="Key technologies">
-    <span class="tech-chip"><i class="fa-solid fa-microchip"></i> Arduino</span>
-    <span class="tech-chip"><i class="fa-solid fa-wave-square"></i> IR Array</span>
-    <span class="tech-chip"><i class="fa-solid fa-gear"></i> PID</span>
-    <span class="tech-chip"><i class="fa-solid fa-sitemap"></i> H-Bridge</span>
-  </div>
-
-  <p class="project-summary">
-    Real-time line following with tuned PID (Kp=40, Kd=12, Ki=0), sensor calibration, motor control debugging, and PCB design/iteration.
-  </p>
-
-  <div class="project-actions">
-    <div class="project-buttons">
-      <a class="btn btn-project-primary" href="https://github.com/hridyasatish/Line-Follower-Robot" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-
-    <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
-      Show details <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="project-details" aria-hidden="true">
-    <ul class="details-list">
-      <li><span class="dkey">Problem / Task:</span> Build a stable, fast line-following robot that can handle sharp turns, varying lighting, and track discontinuities without oscillation.</li>
-      <li><span class="dkey">Solution:</span> Implemented PID steering using a 5-sensor IR array; calibrated sensor thresholds, mapped error to differential motor PWM, and integrated an H-bridge motor driver on a custom PCB for robust routing and power handling.</li>
-      <li><span class="dkey">Validation:</span> Ran repeated track trials to tune Kp/Kd and eliminate oscillations, debugged motor saturation/overshoot, and iterated hardware wiring/PCB routing for cleaner sensor signals and consistent motor response.</li>
-      <li><span class="dkey">Result:</span> Delivered ~98% line-tracking accuracy and earned a competition runner-up finish with reliable real-world performance.</li>
-    </ul>
-  </div>
-</article>
-
-<!-- 5) Light Swarm (ESP8266 + Raspberry Pi) -->
-<article class="project-card project-card--tab" data-category="iot embedded" data-animate="up">
-  <header class="project-head">
-    <h3 class="project-title">Light Swarm (ESP8266 + Raspberry Pi)</h3>
-    <div class="project-badges" aria-label="Project tags">
-      <span class="project-badge">Distributed Systems</span>
-      <span class="project-badge">Networking</span>
-      <span class="project-badge">IoT</span>
-      <span class="project-badge">Fault Handling</span>
-      <span class="project-badge">Data Logging</span>
-    </div>
-  </header>
-
-  <a class="project-media" href="images/lightswarm.png" target="_blank" rel="noopener">
-    <img src="images/lightswarm.png" alt="ESP8266 swarm system overview" loading="lazy" />
-  </a>
-
-  <div class="project-tech" aria-label="Key technologies">
-    <span class="tech-chip"><i class="fa-solid fa-wifi"></i> ESP8266</span>
-    <span class="tech-chip"><i class="fa-brands fa-python"></i> Raspberry Pi</span>
-    <span class="tech-chip"><i class="fa-solid fa-network-wired"></i> UDP</span>
-    <span class="tech-chip"><i class="fa-solid fa-diagram-project"></i> Leader Election</span>
-  </div>
-
-  <p class="project-summary">
-    Distributed IoT lighting swarm that elects a master node from sensor readings, forwards data to Raspberry Pi, and visualizes behavior over time.
-  </p>
-
-  <div class="project-actions">
-    <div class="project-buttons">
-      <a class="btn btn-project-primary" href="https://github.com/hridyasatish/Light-Swarm-Project-ESP8266-Raspberry-Pi-UDP-Master-Election-System" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-
-    <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
-      Show details <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="project-details" aria-hidden="true">
-    <ul class="details-list">
-      <li><span class="dkey">Problem / Task:</span> Coordinate multiple ESP8266 nodes to autonomously select a “master” based on real-time sensor readings and ensure the system remains stable under resets and node dropouts.</li>
-      <li><span class="dkey">Solution:</span> Built a lightweight UDP multicast protocol for periodic broadcasts and implemented deterministic leader election; routed master data to a Raspberry Pi for centralized logging and control (start/stop + reset flows).</li>
-      <li><span class="dkey">Validation:</span> Tested re-election under forced failures, verified packet timing/ordering, and used CSV logs + plots to detect anomalies (missed packets, thrashing, stale master selection).</li>
-      <li><span class="dkey">Result:</span> Achieved repeatable master election and resilient swarm behavior with end-to-end observability, enabling debugging and performance tracking over time.</li>
-    </ul>
-  </div>
-</article>
-
-<!-- 6) EFM32 Edge-AI Optimization (Pruning + Quantization) -->
-<article class="project-card project-card--tab" data-category="embedded hardware realtime" data-animate="up">
-  <header class="project-head">
-    <h3 class="project-title">EFM32 Edge-AI Deployment (Pruning + INT8 Quantization)</h3>
-    <div class="project-badges" aria-label="Project tags">
-      <span class="project-badge">ML on MCU</span>
-      <span class="project-badge">Optimization</span>
-      <span class="project-badge">Deployment</span>
-      <span class="project-badge">Benchmarking</span>
-      <span class="project-badge">Embedded</span>
-    </div>
-  </header>
-
-  <a class="project-media" href="images/efm32_edge_ai.png" target="_blank" rel="noopener">
-    <img src="images/efm32_edge_ai.png" alt="EFM32 ML deployment and metrics" loading="lazy" />
-  </a>
-
-  <div class="project-tech" aria-label="Key technologies">
-    <span class="tech-chip"><i class="fa-solid fa-brain"></i> CNN</span>
-    <span class="tech-chip"><i class="fa-solid fa-scissors"></i> Pruning</span>
-    <span class="tech-chip"><i class="fa-solid fa-compress"></i> INT8</span>
-    <span class="tech-chip"><i class="fa-solid fa-microchip"></i> EFM32</span>
-  </div>
-
-  <p class="project-summary">
-    Optimized and deployed a digit classifier to an EFM32 microcontroller by pruning parameters and quantizing to INT8 while tracking accuracy vs memory/energy.
-  </p>
-
-  <div class="project-actions">
-    <div class="project-buttons">
-      <a class="btn btn-project-primary" href="https://github.com/hridyasatish/EFM32-Based-ML-Model-Optimization-Deployment" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-    </div>
-
-    <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
-      Show details <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
-
-  <div class="project-details" aria-hidden="true">
-    <ul class="details-list">
-      <li><span class="dkey">Problem / Task:</span> Fit a digit-classification CNN onto a resource-constrained EFM32 microcontroller while preserving accuracy and reducing RAM/Flash and energy cost.</li>
-      <li><span class="dkey">Solution:</span> Trained the baseline model in MATLAB, applied iterative structured pruning (L1-based scoring) with accuracy checkpoints, then quantized the pruned model to INT8 for compact deployment.</li>
-      <li><span class="dkey">Validation:</span> Benchmarked accuracy vs pruning level, verified memory footprints (RAM/Flash) and energy/runtime on-board, and compared pre/post optimization tradeoffs with repeatable evaluation runs.</li>
-      <li><span class="dkey">Result:</span> Produced a deployable INT8 model with substantially reduced footprint and measurable efficiency gains, while maintaining usable classification accuracy for edge inference.</li>
-    </ul>
-  </div>
-</article>
- </div>
-  </div>
-</section>
-  <!-- EXPERIENCE -->
-  <!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <div class="container">
-    <div class="section-header" data-animate="up">
-      <h2>Professional Background</h2>
-      <p>Experience across embedded platforms, robotics subsystems, and edge systems.</p>
-    </div>
-
-    <div class="timeline">
-
-      <!-- Synaptics -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Mar 2025 to Present</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/synaptics.png" alt="Synaptics logo" loading="lazy" />
-            <span>Embedded System Developer, Synaptics Incorporated</span>
-          </h3>
-          <p class="timeline-tag">Yocto Linux • Astra AI • I2C/SPI • HIL • Audio/Haptics</p>
-
-          <p>
-            Building a wearable navigation assistant for visually impaired users, combining sensor interfaces, edge inference,
-            and low-latency feedback loops on an embedded Linux platform.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Designed and implemented real-time embedded pipelines in C/C++ and Python for object detection + spatial feedback.</li>
-                <li>Interfaced ultrasonic sensing + other peripherals via I2C/SPI and validated timing/behavior through repeatable sensor tests.</li>
-                <li>Performed board bring-up workflows (GPIO mapping, device-level debugging, structured logging) to stabilize runtime behavior.</li>
-                <li>Modeled navigation behavior using FSMs in MATLAB/Simulink to validate state transitions and real-time response.</li>
-                <li>Collaborated with engineers in an Agile workflow and supported hardware-in-the-loop style testing for feedback reliability.</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
+      <!-- 1) ESP32 CAN Node -->
+      <article class="project-card project-card--tab" data-category="embedded iot hardware" data-animate="up">
+        <header class="project-head">
+          <h3 class="project-title">ESP32 CAN Node (24V I/O)</h3>
+          <div class="project-badges" aria-label="Project tags">
+            <span class="project-badge">Embedded Hardware</span>
+            <span class="project-badge">Industrial I/O</span>
+            <span class="project-badge">CAN Networking</span>
+            <span class="project-badge">PCB Design</span>
+            <span class="project-badge">Bring-up & Validation</span>
           </div>
+        </header>
+
+        <a class="project-media" href="images/Board_Features.png" target="_blank" rel="noopener">
+          <img src="images/Board_Features.png" alt="ESP32 CAN node board features" loading="lazy" />
+        </a>
+
+        <div class="project-tech" aria-label="Key technologies">
+          <span class="tech-chip"><i class="fa-solid fa-microchip"></i> ESP32-C6</span>
+          <span class="tech-chip"><i class="fa-solid fa-network-wired"></i> TWAI (CAN)</span>
+          <span class="tech-chip"><i class="fa-solid fa-bolt"></i> 24V→3.3V</span>
+          <span class="tech-chip"><i class="fa-solid fa-screwdriver-wrench"></i> PCAN Debug</span>
+        </div>
+
+        <p class="project-summary">
+          Industrial CAN node prototype that bridges 24V machine I/O to 3.3V embedded logic with robust power conditioning, protected digital/analog front-ends, and bring-up-validated CAN communication for distributed control.
+        </p>
+
+        <div class="project-actions">
+          <div class="project-buttons">
+            <a class="btn btn-project-primary" href="https://github.com/hridyasatish/ESP32_CAN_Node" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
+            Show details <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <div class="project-details" aria-hidden="true">
+          <ul class="details-list">
+            <li><span class="dkey">Problem / Task:</span> Build a rugged CAN node for an industrial robot that safely interfaces noisy 24V I/O (digital + analog) with 3.3V embedded electronics and supports reliable bus communication with a path to CANopen.</li>
+            <li><span class="dkey">Solution:</span> Designed the schematic + PCB in KiCad around ESP32-C6 (TWAI) with a TJA1051T/3.3 CAN transceiver, implemented a 24V→3.3V buck supply with correct passives and decoupling, and added I/O conditioning using MOSFET-based level shifting for 24V digital inputs plus voltage-divider + op-amp buffering with low-pass filtering for analog sensing.</li>
+            <li><span class="dkey">Validation:</span> Verified bitrate, wiring, termination, and bidirectional CAN traffic using PCAN-USB/PCAN-View; validated filter cutoff/phase and transient response in LTspice using .ac/.tran and Bode plots; iterated ERC/DRC fixes (power flags, net labeling, grounding) to ensure stable bring-up.</li>
+            <li><span class="dkey">Result:</span> Achieved stable 3.3V regulation from a 24V rail, protected 24V-to-logic interfacing, and repeatable CAN bring-up with clean frame RX/TX—delivering a reusable hardware platform ready for expansion to more I/O channels and CANopen application-layer mapping.</li>
+          </ul>
         </div>
       </article>
 
-      <!-- Canvas -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Jun 2025 to Sep 2025</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/canvas.png" alt="Canvas logo" loading="lazy" />
-            <span>Electrical Engineering Intern, Canvas Construction Inc</span>
-          </h3>
-          <p class="timeline-tag">ESP32-C6 • CAN/TWAI • KiCad • 24V→3.3V • Bring-up</p>
-
-          <p>
-            Owned the prototyping cycle for an industrial CAN node: schematic → PCB → assembly → bring-up → validation,
-            focused on reliable multi-device communication and mixed-voltage robustness.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Developed a custom CAN node PCB in KiCad around ESP32-C6 + CAN transceiver with proper termination/decoupling.</li>
-                <li>Designed power stage for industrial rails (24V to 3.3V) and validated stable regulation under load/bring-up conditions.</li>
-                <li>Configured ESP-IDF TWAI drivers, debugged CAN traffic, and verified stable communication across a multi-node network.</li>
-                <li>Focused on signal integrity + noise resilience (layout choices, grounding strategy, validation with measurements/logs).</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
+      <!-- 2) Wearable Navigation Assistant (Synaptics Astra) -->
+      <article class="project-card project-card--tab" data-category="embedded realtime iot" data-animate="up">
+        <header class="project-head">
+          <h3 class="project-title">Synaptics Astra AI Navigation Assistant</h3>
+          <div class="project-badges" aria-label="Project tags">
+            <span class="project-badge">Embedded Linux</span>
+            <span class="project-badge">Edge AI</span>
+            <span class="project-badge">Sensor Systems</span>
+            <span class="project-badge">Real-time Feedback</span>
+            <span class="project-badge">Bring-up & Debug</span>
           </div>
+        </header>
+
+        <a class="project-media" href="images/wearable.png" target="_blank" rel="noopener">
+          <img src="images/wearable.png" alt="Wearable navigation assistant prototype" loading="lazy" />
+        </a>
+
+        <div class="project-tech" aria-label="Key technologies">
+          <span class="tech-chip"><i class="fa-brands fa-linux"></i> Yocto</span>
+          <span class="tech-chip"><i class="fa-solid fa-microchip"></i> SL1680 NPU</span>
+          <span class="tech-chip"><i class="fa-solid fa-bolt"></i> GPIO</span>
+          <span class="tech-chip"><i class="fa-solid fa-code-branch"></i> Threads</span>
+        </div>
+
+        <p class="project-summary">
+          Edge-AI wearable navigation assistant on Astra SL1680, integrating multi-sensor inputs with low-latency feedback loops and embedded Linux bring-up/debug workflows.
+        </p>
+
+        <div class="project-actions">
+          <div class="project-buttons">
+            <a class="btn btn-project-primary" href="https://github.com/prateeksha9/wearable-navigation" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
+            Show details <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <div class="project-details" aria-hidden="true">
+          <ul class="details-list">
+            <li><span class="dkey">Problem / Task:</span> Build an Edge-AI wearable navigation assistant for visually impaired users that combines semantic scene understanding with reliable obstacle and fall detection on an embedded Linux platform.</li>
+            <li><span class="dkey">Solution:</span> Performed board bring-up on Yocto Linux (GPIO offset mapping + sysfs control), integrated ultrasonic sensing, IMU-based fall detection, and implemented thread-safe real-time loops for feedback delivery.</li>
+            <li><span class="dkey">Validation:</span> Verified GPIO timing and sensor behavior with structured logs, tuned thresholds/filters to reduce false triggers, and ran repeatable indoor/outdoor test paths to validate stability over longer runtimes.</li>
+            <li><span class="dkey">Result:</span> Achieved a stable runtime pipeline that supports low-latency guidance through haptics/audio and a reproducible bring-up/debug workflow that accelerated iteration and field testing.</li>
+          </ul>
         </div>
       </article>
 
-      <!-- GradeUp -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Dec 2022 to Mar 2023</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/gradeup.png" alt="GradeUp logo" loading="lazy" />
-            <span>Embedded Developer, GradeUp</span>
-          </h3>
-          <p class="timeline-tag">Embedded C • Interrupts • Sensors • Arduino</p>
-
-          <p>
-            Built sensor-driven automation logic with a focus on interrupt timing, reliable IO behavior, and clean embedded control flow.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Developed embedded software integrating PIR + temperature sensing for automation use-cases.</li>
-                <li>Implemented motion-sensing logic using real-time interrupts for responsive behavior.</li>
-                <li>Improved efficiency by managing external interrupts using hardware registers and structured timing decisions.</li>
-                <li>Validated edge cases (false triggers, debounce/threshold tuning) using repeat tests and log-based iteration.</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- SmartKnower -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Mar 2021 to Apr 2021</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/smartknower.png" alt="SmartKnower logo" loading="lazy" />
-            <span>IoT Intern, SmartKnower</span>
-          </h3>
-          <p class="timeline-tag">Arduino/ESP8266 • Wireless Monitoring • Web UI</p>
-
-          <p>
-            Built small IoT prototypes for sensor data collection, wireless transmission, and a simple remote monitoring interface.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Developed IoT systems with Arduino/ESP8266 for sensor data collection and wireless transmission.</li>
-                <li>Designed a lightweight web interface for remote monitoring and control in real time.</li>
-                <li>Implemented ultrasonic-based water level monitoring with wireless status updates.</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Aaruush - Committee Head -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Mar 2021 to Dec 2021</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/aaruush.png" alt="Aaruush logo" loading="lazy" />
-            <span>Committee Head (Electronics Domain), Aaruush — SRM University</span>
-          </h3>
-          <p class="timeline-tag">Leadership • Event Ops • Technical Coordination</p>
-
-          <p>
-            Led electronics-domain event execution by coordinating planning, task assignment, and technical readiness across multiple activities.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Owned planning and execution for electronics-focused events; ensured smooth run-of-show and technical success.</li>
-                <li>Coordinated team responsibilities, schedules, and checklists to keep execution predictable under time constraints.</li>
-                <li>Resolved technical blockers during events by quickly validating setups and rerouting tasks when needed.</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Aaruush - Committee Member -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Jul 2020 to Feb 2021</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/aaruush.png" alt="Aaruush logo" loading="lazy" />
-            <span>Committee Member (Electrizite Domain), Aaruush — SRM University</span>
-          </h3>
-          <p class="timeline-tag">Team Execution • Electronics Events</p>
-
-          <p>
-            Supported electronics-domain event delivery by handling assigned responsibilities and on-ground coordination during activities.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Worked with committee heads to execute assigned tasks during electronics-based events.</li>
-                <li>Helped with coordination and smooth execution of event logistics and technical requirements.</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Beeclust -->
-      <article class="timeline-item" data-animate="up">
-        <div class="timeline-date">Jul 2019 to Jan 2020</div>
-        <div class="timeline-content">
-          <h3 class="exp-heading">
-            <img class="exp-logo" src="images/logos/beeclust.png" alt="Beeclust logo" loading="lazy" />
-            <span>Junior Embedded Systems Engineer, Beeclust Multi-Robot Systems Lab</span>
-          </h3>
-          <p class="timeline-tag">Arduino • Sensors • Motor Control • PCB Design</p>
-
-          <p>
-            Built and tested embedded robot subsystems, integrating sensors, motor drivers, and real-time control logic for line-following behavior.
-          </p>
-
-          <div class="collapsible exp-collapsible" data-collapsed="true">
-            <div class="collapsible-content">
-              <ul class="exp-details">
-                <li>Designed and implemented firmware for line-following robots using Arduino (sensor input, motor control, H-Bridge drivers).</li>
-                <li>Developed real-time control logic in C for smooth navigation and improved tracking accuracy.</li>
-                <li>Designed PCBs in KiCad/Eagle and tested assembled boards to confirm hardware-software integration.</li>
-                <li>Iterated debugging using measurements and trial runs to reduce oscillations and improve stability.</li>
-              </ul>
-            </div>
-
-            <button class="btn btn-ghost btn-collapsible"
-                    data-toggle-collapsible
-                    data-more="Show more"
-                    data-less="Show less">
-              Show more
-            </button>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-  <!-- EDUCATION -->
-  <section id="education" class="section section-alt">
-    <div class="container">
-      <div class="section-header" data-animate="up">
-        <h2>Education</h2>
-        <p>Coursework supporting embedded, circuits, and real time systems.</p>
-      </div>
-
-      <div class="education-grid">
-        <div class="edu-degrees" data-animate="left">
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>Master of Embedded and Cyber Physical Systems</h3>
-              <div class="edu-meta">
-                <span class="edu-highlight">GPA 3.9 / 4.0</span>
-                <span class="edu-year">Sep 2024 to Dec 2025</span>
-              </div>
-              <p class="edu-school">University of California, Irvine, CA</p>
-            </div>
-          </div>
-
-          <div class="edu-item">
-            <div class="edu-main">
-              <h3>BE Electronics and Communication, Instrumentation</h3>
-              <div class="edu-meta">
-                <span class="edu-highlight">GPA 3.72 / 4.0</span>
-                <span class="edu-year">Jun 2019 to Jun 2023</span>
-              </div>
-              <p class="edu-school">SRM Institute of Science and Technology, Chennai</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-side" data-animate="right">
-          <article class="card edu-card">
-            <h3>Selected Coursework</h3>
-            <div class="edu-course-columns">
-              <div>
-                <h4>Embedded and CPS</h4>
-                <ul>
-                  <li>Embedded Systems Modelling</li>
-                  <li>Wireless Sensors and Actuators</li>
-                  <li>Real Time Operating Systems</li>
-                  <li>IoT</li>
-                  <li>Machine Learning</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Circuits and Signals</h4>
-                <ul>
-                  <li>Digital Signal Processing</li>
-                  <li>Signals and Systems</li>
-                  <li>Control Systems</li>
-                  <li>Analog and Digital Circuits</li>
-                  <li>Circuit Designing</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PATENT -->
-  <section id="patent" class="section">
-    <div class="container">
-      <div class="section-header" data-animate="up">
-        <h2>Patent</h2>
-        <p>Applied research and prototyping with embedded sensing and feedback.</p>
-      </div>
-
-      <div class="projects-grid single">
-        <article class="project-card" data-animate="up">
-          <div class="project-content">
-            <div class="project-header">
-              <h3>Sensor Based Physics Forceps for Tooth Extraction</h3>
-              <span class="project-tag">Patent No. 542943 • Sep 2022 to Jul 2024</span>
-            </div>
-
-            <p class="project-highlight">
-              ESP32 sensing system for force monitoring with wrist angle feedback.
+      <!-- ===================== -->
+      <!-- MIDDLE "SHOW MORE" CTA -->
+      <!-- ===================== -->
+      <div class="projects-mid-cta" data-animate="up">
+        <div class="projects-mid-cta__inner">
+          <div class="projects-mid-cta__text">
+            <h3 class="projects-mid-cta__title">More projects</h3>
+            <p class="projects-mid-cta__desc">
+              See additional work in <strong>Real-Time Linux</strong>, <strong>Robotics</strong>, <strong>IoT networking</strong>, and <strong>ML on MCU</strong>.
             </p>
+          </div>
 
-            <ul class="project-meta">
-              <li>ESP32 with FSR sensor to monitor force levels</li>
-              <li>Wearable wrist band using MPU6050 over I2C for angle feedback</li>
-              <li>Alerts via WiFi app and audio feedback for unsafe force detection</li>
+          <button
+            class="btn btn-project-primary projects-mid-cta__btn"
+            type="button"
+            id="projectsMoreBtn"
+            aria-expanded="false"
+          >
+            Show more projects <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===================== -->
+      <!-- BLURRED PREVIEW (Rest 4) -->
+      <!-- ===================== -->
+      <div class="projects-more is-locked" id="projectsMore" aria-hidden="true">
+
+        <!-- 3) Canny Edge Detector on PREEMPT_RT (Raspberry Pi) -->
+        <article class="project-card project-card--tab" data-category="embedded realtime" data-animate="up">
+          <header class="project-head">
+            <h3 class="project-title">Canny Edge Detection on PREEMPT_RT (Raspberry Pi)</h3>
+            <div class="project-badges" aria-label="Project tags">
+              <span class="project-badge">Real-Time Linux</span>
+              <span class="project-badge">Multithreading</span>
+              <span class="project-badge">Performance</span>
+              <span class="project-badge">Image Processing</span>
+              <span class="project-badge">Validation</span>
+            </div>
+          </header>
+
+          <a class="project-media" href="images/canny.png" target="_blank" rel="noopener">
+            <img src="images/canny.png" alt="Canny edge detection output and pipeline" loading="lazy" />
+          </a>
+
+          <div class="project-tech" aria-label="Key technologies">
+            <span class="tech-chip"><i class="fa-brands fa-linux"></i> PREEMPT_RT</span>
+            <span class="tech-chip"><i class="fa-solid fa-diagram-project"></i> Pthreads</span>
+            <span class="tech-chip"><i class="fa-solid fa-clock"></i> SCHED_FIFO</span>
+            <span class="tech-chip"><i class="fa-solid fa-microchip"></i> CPU Affinity</span>
+          </div>
+
+          <p class="project-summary">
+            Real-time optimization of an image-processing pipeline using Pthreads, CPU affinity, and RT scheduling to reduce jitter and improve throughput.
+          </p>
+
+          <div class="project-actions">
+            <div class="project-buttons">
+              <a class="btn btn-project-primary" href="https://github.com/hridyasatish/Canny-Edge-Detector-" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+
+            <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-details" aria-hidden="true">
+            <ul class="details-list">
+              <li><span class="dkey">Problem / Task:</span> Improve determinism and throughput of a compute-heavy Canny edge pipeline on a Raspberry Pi under CPU contention, while minimizing jitter for real-time behavior.</li>
+              <li><span class="dkey">Solution:</span> Patched/used PREEMPT_RT and migrated parallelism from OpenMP to Pthreads; pinned threads with CPU affinity and applied RT scheduling (SCHED_FIFO) to prioritize critical stages.</li>
+              <li><span class="dkey">Validation:</span> Instrumented per-stage timing, measured jitter under background load, and iterated thread placement/scheduling parameters to reduce latency spikes and context-switch overhead.</li>
+              <li><span class="dkey">Result:</span> Achieved a more deterministic runtime profile with lower jitter and more consistent frame processing—plus a repeatable methodology for RT tuning on embedded Linux.</li>
             </ul>
           </div>
         </article>
-      </div>
+
+        <!-- 4) Line Following Robot (PCB + Control) -->
+        <article class="project-card project-card--tab" data-category="embedded hardware" data-animate="up">
+          <header class="project-head">
+            <h3 class="project-title">Line Following Robot (PID + Custom PCB)</h3>
+            <div class="project-badges" aria-label="Project tags">
+              <span class="project-badge">Controls</span>
+              <span class="project-badge">Embedded</span>
+              <span class="project-badge">PCB Design</span>
+              <span class="project-badge">Sensors</span>
+              <span class="project-badge">Testing</span>
+            </div>
+          </header>
+
+          <a class="project-media" href="images/line_follower.png" target="_blank" rel="noopener">
+            <img src="images/line_follower.png" alt="Line following robot and PCB" loading="lazy" />
+          </a>
+
+          <div class="project-tech" aria-label="Key technologies">
+            <span class="tech-chip"><i class="fa-solid fa-microchip"></i> Arduino</span>
+            <span class="tech-chip"><i class="fa-solid fa-wave-square"></i> IR Array</span>
+            <span class="tech-chip"><i class="fa-solid fa-gear"></i> PID</span>
+            <span class="tech-chip"><i class="fa-solid fa-sitemap"></i> H-Bridge</span>
+          </div>
+
+          <p class="project-summary">
+            Real-time line following with tuned PID (Kp=40, Kd=12, Ki=0), sensor calibration, motor control debugging, and PCB design/iteration.
+          </p>
+
+          <div class="project-actions">
+            <div class="project-buttons">
+              <a class="btn btn-project-primary" href="https://github.com/hridyasatish/Line-Follower-Robot" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+
+            <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-details" aria-hidden="true">
+            <ul class="details-list">
+              <li><span class="dkey">Problem / Task:</span> Build a stable, fast line-following robot that can handle sharp turns, varying lighting, and track discontinuities without oscillation.</li>
+              <li><span class="dkey">Solution:</span> Implemented PID steering using a 5-sensor IR array; calibrated sensor thresholds, mapped error to differential motor PWM, and integrated an H-bridge motor driver on a custom PCB for robust routing and power handling.</li>
+              <li><span class="dkey">Validation:</span> Ran repeated track trials to tune Kp/Kd and eliminate oscillations, debugged motor saturation/overshoot, and iterated hardware wiring/PCB routing for cleaner sensor signals and consistent motor response.</li>
+              <li><span class="dkey">Result:</span> Delivered ~98% line-tracking accuracy and earned a competition runner-up finish with reliable real-world performance.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 5) Light Swarm (ESP8266 + Raspberry Pi) -->
+        <article class="project-card project-card--tab" data-category="iot embedded" data-animate="up">
+          <header class="project-head">
+            <h3 class="project-title">Light Swarm (ESP8266 + Raspberry Pi)</h3>
+            <div class="project-badges" aria-label="Project tags">
+              <span class="project-badge">Distributed Systems</span>
+              <span class="project-badge">Networking</span>
+              <span class="project-badge">IoT</span>
+              <span class="project-badge">Fault Handling</span>
+              <span class="project-badge">Data Logging</span>
+            </div>
+          </header>
+
+          <a class="project-media" href="images/lightswarm.png" target="_blank" rel="noopener">
+            <img src="images/lightswarm.png" alt="ESP8266 swarm system overview" loading="lazy" />
+          </a>
+
+          <div class="project-tech" aria-label="Key technologies">
+            <span class="tech-chip"><i class="fa-solid fa-wifi"></i> ESP8266</span>
+            <span class="tech-chip"><i class="fa-brands fa-python"></i> Raspberry Pi</span>
+            <span class="tech-chip"><i class="fa-solid fa-network-wired"></i> UDP</span>
+            <span class="tech-chip"><i class="fa-solid fa-diagram-project"></i> Leader Election</span>
+          </div>
+
+          <p class="project-summary">
+            Distributed IoT lighting swarm that elects a master node from sensor readings, forwards data to Raspberry Pi, and visualizes behavior over time.
+          </p>
+
+          <div class="project-actions">
+            <div class="project-buttons">
+              <a class="btn btn-project-primary" href="https://github.com/hridyasatish/Light-Swarm-Project-ESP8266-Raspberry-Pi-UDP-Master-Election-System" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+
+            <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-details" aria-hidden="true">
+            <ul class="details-list">
+              <li><span class="dkey">Problem / Task:</span> Coordinate multiple ESP8266 nodes to autonomously select a “master” based on real-time sensor readings and ensure the system remains stable under resets and node dropouts.</li>
+              <li><span class="dkey">Solution:</span> Built a lightweight UDP multicast protocol for periodic broadcasts and implemented deterministic leader election; routed master data to a Raspberry Pi for centralized logging and control (start/stop + reset flows).</li>
+              <li><span class="dkey">Validation:</span> Tested re-election under forced failures, verified packet timing/ordering, and used CSV logs + plots to detect anomalies (missed packets, thrashing, stale master selection).</li>
+              <li><span class="dkey">Result:</span> Achieved repeatable master election and resilient swarm behavior with end-to-end observability, enabling debugging and performance tracking over time.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 6) EFM32 Edge-AI Optimization (Pruning + Quantization) -->
+        <article class="project-card project-card--tab" data-category="embedded hardware realtime" data-animate="up">
+          <header class="project-head">
+            <h3 class="project-title">EFM32 Edge-AI Deployment (Pruning + INT8 Quantization)</h3>
+            <div class="project-badges" aria-label="Project tags">
+              <span class="project-badge">ML on MCU</span>
+              <span class="project-badge">Optimization</span>
+              <span class="project-badge">Deployment</span>
+              <span class="project-badge">Benchmarking</span>
+              <span class="project-badge">Embedded</span>
+            </div>
+          </header>
+
+          <a class="project-media" href="images/efm32_edge_ai.png" target="_blank" rel="noopener">
+            <img src="images/efm32_edge_ai.png" alt="EFM32 ML deployment and metrics" loading="lazy" />
+          </a>
+
+          <div class="project-tech" aria-label="Key technologies">
+            <span class="tech-chip"><i class="fa-solid fa-brain"></i> CNN</span>
+            <span class="tech-chip"><i class="fa-solid fa-scissors"></i> Pruning</span>
+            <span class="tech-chip"><i class="fa-solid fa-compress"></i> INT8</span>
+            <span class="tech-chip"><i class="fa-solid fa-microchip"></i> EFM32</span>
+          </div>
+
+          <p class="project-summary">
+            Optimized and deployed a digit classifier to an EFM32 microcontroller by pruning parameters and quantizing to INT8 while tracking accuracy vs memory/energy.
+          </p>
+
+          <div class="project-actions">
+            <div class="project-buttons">
+              <a class="btn btn-project-primary" href="https://github.com/hridyasatish/EFM32-Based-ML-Model-Optimization-Deployment" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+
+            <button class="btn btn-project-toggle" type="button" data-project-toggle data-more="Show details" data-less="Hide details" aria-expanded="false">
+              Show details <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-details" aria-hidden="true">
+            <ul class="details-list">
+              <li><span class="dkey">Problem / Task:</span> Fit a digit-classification CNN onto a resource-constrained EFM32 microcontroller while preserving accuracy and reducing RAM/Flash and energy cost.</li>
+              <li><span class="dkey">Solution:</span> Trained the baseline model in MATLAB, applied iterative structured pruning (L1-based scoring) with accuracy checkpoints, then quantized the pruned model to INT8 for compact deployment.</li>
+              <li><span class="dkey">Validation:</span> Benchmarked accuracy vs pruning level, verified memory footprints (RAM/Flash) and energy/runtime on-board, and compared pre/post optimization tradeoffs with repeatable evaluation runs.</li>
+              <li><span class="dkey">Result:</span> Produced a deployable INT8 model with substantially reduced footprint and measurable efficiency gains, while maintaining usable classification accuracy for edge inference.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div><!-- /projects-more -->
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+  <!-- EDUCATION -->
+  
+<section id="education" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-animate="up">
+      <h2>Education</h2>
+      <p>Coursework supporting embedded, circuits, and real time systems.</p>
     </div>
-  </section>
+
+    <!-- NEW: stacked rows, each row has (left: logo + school/degree/major) and (right: coursework) -->
+    <div class="edu-stack">
+
+      <!-- 1) UCI -->
+      <article class="edu-row" data-animate="up">
+        <div class="edu-card-left">
+          <img class="edu-logo" src="images/logos/uci.png" alt="UC Irvine logo" loading="lazy" />
+
+          <div class="edu-head-text">
+            <p class="edu-school-name">University of California, Irvine</p>
+            <h3 class="edu-degree">Master’s Degree</h3>
+            <p class="edu-major">Embedded and Cyber Physical Systems</p>
+            <p>
+             <span class="edu-year">Sep 2024 – Dec 2025</span>
+
+             <span class="edu-location">Irvine, CA </span> <p>
+              <div class="edu-meta">
+              <span class="edu-highlight">GPA 3.9 / 4.0</span>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card-right">
+          <h4 class="edu-side-title">Selected Coursework</h4>
+          <ul class="edu-course-list">
+            <li>Embedded Systems Modelling</li>
+            <li>Real Time Operating Systems</li>
+            <li>Wireless Sensors and Actuators</li>
+            <li>IoT Systems</li>
+            <li>Machine Learning for Embedded Systems</li>
+            <li>Control Systems</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 2) SRM -->
+      <article class="edu-row" data-animate="up">
+        <div class="edu-card-left">
+          <img class="edu-logo" src="images/logos/srm.png" alt="SRM Institute of Science and Technology logo" loading="lazy" />
+
+          <div class="edu-head-text">
+            <p class="edu-school-name">SRM Institute of Science and Technology</p>
+            <h3 class="edu-degree">Bachelor’s Degree</h3>
+            <p class="edu-major">Electronics and Communication Engineering (Instrumentation)</p>
+
+           
+
+            <p >
+              <span class="edu-year">Jun 2019 – Jun 2023</span>
+              <span class="edu-location">Chennai, India</span></p>
+               <div class="edu-meta">
+              <span class="edu-highlight">GPA 3.72 / 4.0</span> <br>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card-right">
+          <h4 class="edu-side-title">Selected Coursework</h4>
+          <ul class="edu-course-list">
+            <li>Signals and Systems</li>
+            <li>Digital Signal Processing</li>
+            <li>Analog and Digital Circuits</li>
+            <li>Microcontrollers and Embedded Systems</li>
+            <li>Communication Systems</li>
+            <li>Control Systems</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  <!-- PATENT -->
+ 
+<section id="patent" class="section">
+  <div class="container">
+    <div class="section-header" data-animate="up">
+      <h2>Patent</h2>
+      <p>Applied research and prototyping with embedded sensing and feedback.</p>
+    </div>
+
+    <div class="projects-grid single">
+
+      <article class="project-card patent-card" data-animate="up">
+
+        <!-- Top header row (logo + title + number + dates) -->
+        <div class="patent-head">
+          <div class="patent-org">
+            <!-- SRM logo (put your logo here) -->
+            <img class="patent-org-logo" src="images/logos/srm.png" alt="SRM Institute of Science and Technology logo" />
+          </div>
+
+          <div class="patent-head-text">
+            <h3 class="patent-title">Sensor Based Physics Forceps for Tooth Extraction</h3>
+            <div class="patent-meta">
+              <span class="project-tag">Patent No. 542943</span>
+              <span class="patent-dates">Sep 2022 – Jul 2024</span>
+            </div>
+            <p class="patent-subline">
+              Embedded sensing system that monitors applied dental force in real time and provides feedback to reduce unsafe extraction pressure.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick preview row (small, visible even before show more) -->
+        <div class="patent-preview">
+          <div class="patent-preview-block">
+            <span class="patent-label">Core stack</span>
+            <div class="patent-chips">
+              <span class="skill-chip">ESP32</span>
+              <span class="skill-chip">FSR sensing</span>
+              <span class="skill-chip">MPU6050 (I2C)</span>
+              <span class="skill-chip">Firmware (C/C++)</span>
+              <span class="skill-chip">Validation</span>
+            </div>
+          </div>
+
+          <div class="patent-preview-block">
+            <span class="patent-label">One-line outcome</span>
+            <p class="patent-one-liner">
+              Built and validated a compact pressure + motion feedback system that improves operator awareness during extraction.
+            </p>
+          </div>
+        </div>
+
+        <!-- Collapsible (Show more) -->
+        <div class="collapsible patent-collapsible" data-collapsed="true">
+          <div class="collapsible-content">
+
+            <!-- 2-column layout: text + images -->
+            <div class="patent-details-grid">
+
+              <!-- LEFT: content -->
+              <div class="patent-details-text">
+                <h4 class="patent-h">Abstract</h4>
+                <p class="patent-p">
+                  Designed a sensor-assisted dental forceps system to measure force applied by the practitioner and provide feedback when unsafe thresholds are exceeded.
+                  The goal was to reduce over-force events and improve repeatability during extraction by combining embedded sensing, firmware processing, and user feedback.
+                </p>
+
+                <h4 class="patent-h">What I built / implemented</h4>
+                <ul class="patent-list">
+
+                  <li>Selected and integrated an FSR at the thumb pressure point to capture applied force in a mechanically constrained handle design.</li>
+                  <li>Implemented ESP32 firmware to sample, filter, and threshold sensor readings for real-time alerts.</li>
+                  <li>Added motion/angle monitoring using MPU6050 over I2C to correlate handling posture with force patterns.</li>
+                  <li>Designed feedback behavior (audio / haptics / app notification) to make warnings immediate and usable in practice.</li>
+                  <li>Iterated mechanical placement + protection to improve sensor durability during repeated real-world testing.</li>
+                </ul>
+
+                <h4 class="patent-h">Results / impact</h4>
+                <ul class="patent-list">
+
+                  <li>Achieved repeatable force detection and stable alerting under varying grip and pressure conditions.</li>
+                  <li>Validated sensing placement through multiple physical trials on artificial teeth to confirm realistic load points.</li>
+                  <li>Delivered a working prototype strong enough to support a granted patent outcome and documentation.</li>
+                </ul>
+
+                
+              </div>
+
+              <!-- RIGHT: images (A4 thumbnails) -->
+             <div class="patent-side">
+  <div class="patent-images">
+    <span class="patent-label">Patent visuals</span>
+
+    <div class="patent-gallery">
+      <a class="patent-thumb" href="images/patent_application.png" target="_blank" rel="noopener">
+        <img src="images/patent_application.png" alt="Patent application page thumbnail" loading="lazy" />
+        <span class="patent-thumb-cap">Application</span>
+      </a>
+
+      <a class="patent-thumb" href="images/patent_certificate.png" target="_blank" rel="noopener">
+        <img src="images/patent_certificate.png" alt="Patent certificate thumbnail" loading="lazy" />
+        <span class="patent-thumb-cap">Certificate</span>
+      </a>
+    </div>
+
+    <p class="patent-note">Click to open full size (A4) in a new tab.</p>
+  </div>
+
+  <div class="patent-skills">
+    <span class="patent-label">Skills developed</span>
+    <div class="patent-chips patent-chips-tight">
+      <span class="skill-chip">Sensor integration</span>
+      <span class="skill-chip">Embedded firmware</span>
+      <span class="skill-chip">I2C debugging</span>
+      <span class="skill-chip">Signal conditioning mindset</span>
+      <span class="skill-chip">Prototype validation</span>
+      <span class="skill-chip">Requirements → testing</span>
+    </div>
+  </div>
+</div>
+
+
+            </div>
+          </div>
+
+          <button class="btn btn-ghost btn-collapsible"
+                  data-toggle-collapsible
+                  data-more="Show more"
+                  data-less="Show less">
+            Show more
+          </button>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- CONTACT -->
   <section id="contact" class="section section-alt">
@@ -968,8 +1222,8 @@
       <div class="contact-grid">
         <div data-animate="left">
           <p>
-            Interested in roles where firmware and board level choices affect reliability in the field.
-            Happy to discuss projects, testing approach, and bring up experience.
+            I enjoy building embedded systems that stay reliable outside the lab from PCB bring up and signal integrity checks to firmware debugging and repeatable test flows.
+            If you are hiring for embedded systems , hardware bring- up or similar roles, I would love to share my projects and how I approach bring up and validation.
           </p>
         </div>
 
@@ -1035,4 +1289,3 @@
   <script src="static/js/main.js"></script>
 </body>
 </html>
-
