@@ -1150,3 +1150,52 @@ body.light-mode .collapsible[data-collapsed="true"] .collapsible-content::after{
     aspect-ratio: 4 / 3;  /* portrait images feel less "tiny" on mobile */
   }
 }
+/* ================================
+   Experience + Education Logos
+   ================================ */
+
+.exp-heading{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  flex-wrap:wrap;
+}
+
+.exp-logo{
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  object-fit:contain;
+  padding:4px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(148,163,184,.25);
+}
+
+.edu-heading{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  flex-wrap:wrap;
+  margin:0 0 .35rem;
+}
+
+.edu-logo{
+  width:30px;
+  height:30px;
+  border-radius:10px;
+  object-fit:contain;
+  padding:4px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(148,163,184,.25);
+}
+
+body.light-mode .exp-logo,
+body.light-mode .edu-logo{
+  background:#fff;
+}
+
+/* Optional: show a bit more before "Show more" */
+.collapsible-content{
+  max-height:10.5rem; /* was 6.4rem */
+}
+
