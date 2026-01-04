@@ -609,108 +609,257 @@
   </div>
 </section>
   <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="container">
-      <div class="section-header" data-animate="up">
-        <h2>Professional Background</h2>
-        <p>Experience across embedded platforms, robotics subsystems, and edge systems.</p>
-      </div>
-
-      <div class="timeline">
-
-        <article class="timeline-item" data-animate="up">
-          <div class="timeline-date">Mar 2025 to Present</div>
-          <div class="timeline-content">
-            <h3>Embedded Systems and IoT Apprentice, Synaptics Incorporated</h3>
-            <p class="timeline-tag">Yocto Linux • Sensors • Haptics • SyNAP</p>
-
-            <p>
-              Worked on a wearable navigation assistant on the Synaptics Astra board running Yocto Linux with GPIO mapping and efficient resource usage.
-            </p>
-
-            <div class="collapsible exp-collapsible" data-collapsed="true">
-              <div class="collapsible-content">
-                <ul class="exp-details">
-                  <li>Ultrasonic sensing with haptic feedback for navigation cues</li>
-                  <li>Fall detection using MPU6050 with CSV logging in Python</li>
-                  <li>Model conversion through SyNAP offline optimization</li>
-                  <li>Navigation state transitions modeled in MATLAB Stateflow</li>
-                </ul>
-              </div>
-
-              <button class="btn btn-ghost btn-collapsible"
-                      data-toggle-collapsible
-                      data-more="Show more"
-                      data-less="Show less">
-                Show more
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="timeline-item" data-animate="up">
-          <div class="timeline-date">Jun 2025 to Sep 2025</div>
-          <div class="timeline-content">
-            <h3>Electrical Engineering Intern, Canvas Construction Inc</h3>
-            <p class="timeline-tag">ESP32 CAN nodes • KiCad • Power • Validation</p>
-
-            <p>
-              Owned the prototyping cycle for ESP32 CAN nodes for industrial robots including schematic capture, PCB layout, assembly, bring up, and diagnostics.
-            </p>
-
-            <div class="collapsible exp-collapsible" data-collapsed="true">
-              <div class="collapsible-content">
-                <ul class="exp-details">
-                  <li>3.3V supply from 24V using buck converters with MOSFET protection</li>
-                  <li>Analog signal conditioning with op amps for noise resilience</li>
-                  <li>CAN diagnostics with PCAN tools and timing validation</li>
-                  <li>Signal integrity checks using LTspice and oscilloscope measurements</li>
-                </ul>
-              </div>
-
-              <button class="btn btn-ghost btn-collapsible"
-                      data-toggle-collapsible
-                      data-more="Show more"
-                      data-less="Show less">
-                Show more
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="timeline-item" data-animate="up">
-          <div class="timeline-date">Dec 2022 to Apr 2023</div>
-          <div class="timeline-content">
-            <h3>Embedded Systems Developer, GradeUp</h3>
-            <p class="timeline-tag">ESP8266 firmware • Interrupt optimization • Web UI</p>
-
-            <p>
-              Firmware in C for ESP8266 home automation using register level control and interrupt focused timing improvements with a web UI for monitoring.
-            </p>
-
-            <div class="collapsible exp-collapsible" data-collapsed="true">
-              <div class="collapsible-content">
-                <ul class="exp-details">
-                  <li>Interrupt driven GPIO response and timing improvements</li>
-                  <li>PIR motion sensing logic for automated lighting control</li>
-                  <li>Web interface for monitoring and control</li>
-                </ul>
-              </div>
-
-              <button class="btn btn-ghost btn-collapsible"
-                      data-toggle-collapsible
-                      data-more="Show more"
-                      data-less="Show less">
-                Show more
-              </button>
-            </div>
-
-          </div>
-        </article>
-
-      </div>
+  <!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header" data-animate="up">
+      <h2>Professional Background</h2>
+      <p>Experience across embedded platforms, robotics subsystems, and edge systems.</p>
     </div>
-  </section>
+
+    <div class="timeline">
+
+      <!-- Synaptics -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Mar 2025 to Present</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/synaptics.png" alt="Synaptics logo" loading="lazy" />
+            <span>Embedded System Developer, Synaptics Incorporated</span>
+          </h3>
+          <p class="timeline-tag">Yocto Linux • Astra AI • I2C/SPI • HIL • Audio/Haptics</p>
+
+          <p>
+            Building a wearable navigation assistant for visually impaired users, combining sensor interfaces, edge inference,
+            and low-latency feedback loops on an embedded Linux platform.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Designed and implemented real-time embedded pipelines in C/C++ and Python for object detection + spatial feedback.</li>
+                <li>Interfaced ultrasonic sensing + other peripherals via I2C/SPI and validated timing/behavior through repeatable sensor tests.</li>
+                <li>Performed board bring-up workflows (GPIO mapping, device-level debugging, structured logging) to stabilize runtime behavior.</li>
+                <li>Modeled navigation behavior using FSMs in MATLAB/Simulink to validate state transitions and real-time response.</li>
+                <li>Collaborated with engineers in an Agile workflow and supported hardware-in-the-loop style testing for feedback reliability.</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Canvas -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Jun 2025 to Sep 2025</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/canvas.png" alt="Canvas logo" loading="lazy" />
+            <span>Electrical Engineering Intern, Canvas Construction Inc</span>
+          </h3>
+          <p class="timeline-tag">ESP32-C6 • CAN/TWAI • KiCad • 24V→3.3V • Bring-up</p>
+
+          <p>
+            Owned the prototyping cycle for an industrial CAN node: schematic → PCB → assembly → bring-up → validation,
+            focused on reliable multi-device communication and mixed-voltage robustness.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Developed a custom CAN node PCB in KiCad around ESP32-C6 + CAN transceiver with proper termination/decoupling.</li>
+                <li>Designed power stage for industrial rails (24V to 3.3V) and validated stable regulation under load/bring-up conditions.</li>
+                <li>Configured ESP-IDF TWAI drivers, debugged CAN traffic, and verified stable communication across a multi-node network.</li>
+                <li>Focused on signal integrity + noise resilience (layout choices, grounding strategy, validation with measurements/logs).</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- GradeUp -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Dec 2022 to Mar 2023</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/gradeup.png" alt="GradeUp logo" loading="lazy" />
+            <span>Embedded Developer, GradeUp</span>
+          </h3>
+          <p class="timeline-tag">Embedded C • Interrupts • Sensors • Arduino</p>
+
+          <p>
+            Built sensor-driven automation logic with a focus on interrupt timing, reliable IO behavior, and clean embedded control flow.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Developed embedded software integrating PIR + temperature sensing for automation use-cases.</li>
+                <li>Implemented motion-sensing logic using real-time interrupts for responsive behavior.</li>
+                <li>Improved efficiency by managing external interrupts using hardware registers and structured timing decisions.</li>
+                <li>Validated edge cases (false triggers, debounce/threshold tuning) using repeat tests and log-based iteration.</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SmartKnower -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Mar 2021 to Apr 2021</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/smartknower.png" alt="SmartKnower logo" loading="lazy" />
+            <span>IoT Intern, SmartKnower</span>
+          </h3>
+          <p class="timeline-tag">Arduino/ESP8266 • Wireless Monitoring • Web UI</p>
+
+          <p>
+            Built small IoT prototypes for sensor data collection, wireless transmission, and a simple remote monitoring interface.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Developed IoT systems with Arduino/ESP8266 for sensor data collection and wireless transmission.</li>
+                <li>Designed a lightweight web interface for remote monitoring and control in real time.</li>
+                <li>Implemented ultrasonic-based water level monitoring with wireless status updates.</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Aaruush - Committee Head -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Mar 2021 to Dec 2021</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/aaruush.png" alt="Aaruush logo" loading="lazy" />
+            <span>Committee Head (Electronics Domain), Aaruush — SRM University</span>
+          </h3>
+          <p class="timeline-tag">Leadership • Event Ops • Technical Coordination</p>
+
+          <p>
+            Led electronics-domain event execution by coordinating planning, task assignment, and technical readiness across multiple activities.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Owned planning and execution for electronics-focused events; ensured smooth run-of-show and technical success.</li>
+                <li>Coordinated team responsibilities, schedules, and checklists to keep execution predictable under time constraints.</li>
+                <li>Resolved technical blockers during events by quickly validating setups and rerouting tasks when needed.</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Aaruush - Committee Member -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Jul 2020 to Feb 2021</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/aaruush.png" alt="Aaruush logo" loading="lazy" />
+            <span>Committee Member (Electrizite Domain), Aaruush — SRM University</span>
+          </h3>
+          <p class="timeline-tag">Team Execution • Electronics Events</p>
+
+          <p>
+            Supported electronics-domain event delivery by handling assigned responsibilities and on-ground coordination during activities.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Worked with committee heads to execute assigned tasks during electronics-based events.</li>
+                <li>Helped with coordination and smooth execution of event logistics and technical requirements.</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Beeclust -->
+      <article class="timeline-item" data-animate="up">
+        <div class="timeline-date">Jul 2019 to Jan 2020</div>
+        <div class="timeline-content">
+          <h3 class="exp-heading">
+            <img class="exp-logo" src="images/logos/beeclust.png" alt="Beeclust logo" loading="lazy" />
+            <span>Junior Embedded Systems Engineer, Beeclust Multi-Robot Systems Lab</span>
+          </h3>
+          <p class="timeline-tag">Arduino • Sensors • Motor Control • PCB Design</p>
+
+          <p>
+            Built and tested embedded robot subsystems, integrating sensors, motor drivers, and real-time control logic for line-following behavior.
+          </p>
+
+          <div class="collapsible exp-collapsible" data-collapsed="true">
+            <div class="collapsible-content">
+              <ul class="exp-details">
+                <li>Designed and implemented firmware for line-following robots using Arduino (sensor input, motor control, H-Bridge drivers).</li>
+                <li>Developed real-time control logic in C for smooth navigation and improved tracking accuracy.</li>
+                <li>Designed PCBs in KiCad/Eagle and tested assembled boards to confirm hardware-software integration.</li>
+                <li>Iterated debugging using measurements and trial runs to reduce oscillations and improve stability.</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-ghost btn-collapsible"
+                    data-toggle-collapsible
+                    data-more="Show more"
+                    data-less="Show less">
+              Show more
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- EDUCATION -->
   <section id="education" class="section section-alt">
@@ -886,3 +1035,4 @@
   <script src="static/js/main.js"></script>
 </body>
 </html>
+
